@@ -33,13 +33,17 @@ return {
         lazy = false,
         config = function()
             local lsp_zero = require("lsp-zero")
-            local lspconfig = require("lspconfig")
 
             lsp_zero.on_attach(function(_, bufnr)
                 lsp_zero.default_keymaps({ buffer = bufnr })
                 lsp_zero.buffer_autoformat()
             end)
 
+
+            local lspconfig = require("lspconfig")
+
+
+            require("mason").setup()
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "lua_ls"
@@ -79,12 +83,12 @@ return {
                     }
                 }
             })
-            vim.keymap.set("n", "<leader>e", "NvimTreeToggle<cr>")
+            vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
         end
     },
     -- adds a nicer status line, as well as "tabs" for each open buffer.
     {
-        "nvim/lualine/lualine.nvim",
+        "nvim-lualine/lualine.nvim",
         lazy = false,
         opts = {
             tabline = {

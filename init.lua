@@ -1,3 +1,6 @@
+-- set the leader key to space.
+vim.g.mapleader = " "
+
 -- bootstraps lazy.nvim
 -- lazy.nvim is the package manager I use for all of my plugins.
 -- All plugins are defined in lua/plugins.lua. I used to split them
@@ -17,8 +20,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
--- set the leader key to space.
-vim.g.mapleader = " "
+
 
 -- set lines to automatically wrap at 120 characters.
 vim.opt.wrap = true

@@ -62,6 +62,18 @@ return {
             })
         end
     },
+    -- This plugin helps to manage formatters for different languages
+    {
+        "mhartington/formatter.nvim",
+        lazy = false,
+        config = function()
+            require("formatter").setup({
+                filetype = {
+                    python = require("formatter.filetypes.python").black
+                }
+            })
+        end
+    },
     -- adds auto closing pairs for (), {}, <>, "", etc.
     {
         "windwp/nvim-autopairs",

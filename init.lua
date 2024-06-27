@@ -41,8 +41,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- enable line numbers.
--- NOTE TO SELF: I should look into relative line numbers
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- set colorscheme
 vim.cmd.colorscheme("catppuccin")

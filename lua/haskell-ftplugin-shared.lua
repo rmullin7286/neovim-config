@@ -10,15 +10,15 @@ vim.keymap.set('n', '<leader>cl', vim.lsp.codelens.run, opts)
 vim.keymap.set('n', '<leader>hs', ht.hoogle.hoogle_signature, opts)
 
 -- evaluates all code snippets
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf_eval_all)
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf_eval_all, opts)
 
 -- Toggles the GHCi repl for the current package
 vim.keymap.set('n', '<leader>rr', ht.repl.toggle, opts)
 
 -- Toggle GHCi for the current buffer
 vim.keymap.set('n', '<leader>rf', function()
-  ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+    ht.repl.toggle(vim.api.nvim_buf_get_name(0))
 end, opts)
 
 -- Quits the repl
-nvim.keymap.set('n', '<leader>rq', ht.repl.quit, opts)
+vim.keymap.set('n', '<leader>rq', ht.repl.quit, opts)

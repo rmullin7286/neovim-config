@@ -1,4 +1,24 @@
--- This module defines all of the plugins I use to make neovim a full fledged code editor.
+-- This module defines all of the plugins I use to make neovim a full featured code editor.
+
+-- the haskell language server currently has an issue with malformed snippets.
+-- Haskell is so terse that I hardly ever use snippets anyway so this setting just
+-- disables them.
+-- I have an open ticket to track a fix, I can remove this when that's closed
+-- https://github.com/haskell/haskell-language-server/issues/4363
+vim.g.haskell_tools = {
+    hls = {
+        settings = {
+            plugin = {
+                ['ghcide-completions'] = {
+                    config = {
+                        snippetsOn = false,
+                        autoExtendOn = true
+                    }
+                }
+            }
+        }
+    }
+}
 
 return {
     -- This is the colorscheme I'm currently using.

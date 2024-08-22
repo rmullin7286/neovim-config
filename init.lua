@@ -23,6 +23,9 @@ require("lazy").setup("plugins")
 -- allow yanking and pasting to/from the system clipboard
 vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
+-- set colorscheme
+vim.cmd.colorscheme "catppuccin"
+
 -- set lines to automatically wrap at 120 characters.
 vim.opt.wrap = true
 vim.opt.textwidth = 120

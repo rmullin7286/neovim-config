@@ -48,5 +48,6 @@ vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- set colorscheme
-vim.cmd.colorscheme("catppuccin")
+-- set search to be case insensitive, unless upper cases are explicitly searched for
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

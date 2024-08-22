@@ -26,12 +26,16 @@ return {
             },
             handlers = {
                 function(server_name)
-                    lspconfig[server_name].setup({})
+                    if server_name ~= "rust_analyzer" then
+                        lspconfig[server_name].setup({})
+                    end
                 end,
                 lua_ls = function()
                     lspconfig.lua_ls.setup(lsp_zero.nvim_lua_ls())
                 end
             }
         })
+
+        vim.lsp.inlay_hint.enable(true)
     end
 }

@@ -37,5 +37,22 @@ return {
         })
 
         vim.lsp.inlay_hint.enable(true)
+
+        local cmp = require('cmp')
+        cmp.setup({
+            sources = {
+                { name = 'nvim_lsp' }
+            },
+            snippet = {
+                expand = function(args)
+                    vim.snippet.expand(args.body)
+                end
+            },
+            mapping = cmp.mapping.preset.insert({}),
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered()
+            }
+        })
     end
 }

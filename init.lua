@@ -30,13 +30,6 @@ vim.cmd.colorscheme "catppuccin"
 vim.opt.wrap = true
 vim.opt.textwidth = 120
 
--- keybindings
---
--- These bindings cycle through buffers, which will be displayed as
--- tabs at the top of the editor.
-vim.keymap.set("n", "<Tab>", ":bnext<cr>")
-vim.keymap.set("n", "<S-Tab>", ":bprev<cr>")
-
 -- Personally I think tabs are better than spaces, but everyone else
 -- seems to disagree, so here we go.
 -- NOTE TO SELF: At work we use 2 spaces, so make this configurable.
@@ -51,3 +44,5 @@ vim.opt.relativenumber = true
 -- set search to be case insensitive, unless upper cases are explicitly searched for
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+require('keybindings')

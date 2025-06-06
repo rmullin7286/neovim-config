@@ -22,3 +22,6 @@ end, opts)
 
 -- Quits the repl
 vim.keymap.set('n', '<leader>rq', ht.repl.quit, opts)
+
+-- things bug out when inlay hints are enabled
+vim.lsp.inlay_hint.enable(false)

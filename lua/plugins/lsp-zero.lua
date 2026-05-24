@@ -15,6 +15,7 @@ return {
         lsp_zero.on_attach(function(_, bufnr)
             lsp_zero.default_keymaps({ buffer = bufnr })
             lsp_zero.buffer_autoformat()
+            vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, { buffer = bufnr })
         end)
 
         local lspconfig = require("lspconfig")

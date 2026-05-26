@@ -17,3 +17,7 @@ vim.keymap.set('n', '<F7>', function() require('dap').step_into() end)
 vim.keymap.set('n', '<F8>', function() require('dap').step_out() end)
 vim.keymap.set('n', '<leader>dh', function() require('dap.ui.widgets').hover() end)
 vim.keymap.set('n', 'gl', function() vim.diagnostic.open_float() end)
+
+-- Allows moving visually selected code up and down more easily
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { silent = true })
